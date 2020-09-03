@@ -1,9 +1,9 @@
-import { of } from 'rxjs'; 
+import { of, timer } from 'rxjs'; 
 import { map } from 'rxjs/operators';
 
 
-const source = of('World').pipe(
-  map(x => `Hello ${x}!`)
-);
+let timer0 = timer(1000);
 
-source.subscribe(x => console.log(x));
+timer0.subscribe(_ => console.log(_));
+
+// source.subscribe(x => console.log(x));
